@@ -133,6 +133,7 @@ Weights and Biases is also used to log model performance. You can view the Weigh
 
 Here is an example of wandb logging:
 ![wandb-logs](tests/test_data/wandb-logs.png)
+![wandb-logs](tests/test_data/system-logs.png)
 
 ## Testing
 To run tests and generate an HTML report, use the following command:
@@ -154,8 +155,9 @@ You can also run the Bird Classifier App in a Docker container. A Dockerfile is 
     ```
 2. Run the Docker container:
     ```bash
-    docker run -p 8000:8000 bird-classifier-app
+    docker run --name birdclassifier -p 8000:8000 --gpus=all -v {pwd}/:/app/ bird_classifier
     ```
+    make sure to replace {pwd} with the absolute path to the bird-classifier-app directory.
 
 ## Contributing
 Contributions are welcome!
