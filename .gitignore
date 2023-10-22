@@ -11,7 +11,6 @@ __pycache__/
 build/
 wandb/
 logs/
-tests/test_outputs/
 temp/
 develop-eggs/
 dist/
