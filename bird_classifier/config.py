@@ -25,7 +25,7 @@ class Config:
     log_level_file = "DEBUG"
     log_level_console = "DEBUG"
 
-    wandb = True
+    wandb = False
     wandb_project = "bird_classifier"
     wandb_run_name = "testing"
     wandb_entity = "connor-mcshane"

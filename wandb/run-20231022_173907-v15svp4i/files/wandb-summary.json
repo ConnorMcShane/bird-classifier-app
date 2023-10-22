@@ -1,0 +1,1 @@
+{"_wandb": {"runtime": 33}, "inference_requests": 5, "images_loaded": 5, "loading_failures": 0, "samples_inferenced": 5, "batch_time": 1.4654099941253662, "average_sample_time": 0.29308199882507324, "_timestamp": 1697992776.5526814, "_runtime": 29.238961458206177, "_step": 0}
