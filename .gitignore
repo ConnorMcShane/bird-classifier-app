@@ -9,6 +9,9 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+wandb/
+logs/
+tests/test_outputs/
 temp/
 develop-eggs/
 dist/
