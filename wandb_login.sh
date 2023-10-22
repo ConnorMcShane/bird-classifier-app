@@ -1,1 +1,0 @@
-wandb login --host "https://api.wandb.ai/" --api_key "2862ab03257d0c511cc8c6a2f8316d6b039b1f3d" --username "connor-mcshane"
