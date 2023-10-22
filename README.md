@@ -39,6 +39,7 @@ A Python application that serves a TensorHub model through an API to classify bi
 
     ```bash
     pip install -r requirements.txt
+    pip install .
     ```
 ## Usage
 To start the Bird Classifier App, use the following command:
