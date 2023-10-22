@@ -3,7 +3,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.9-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-A Python application that serves a TensorHub model through an API to classify bird images. It uses FastAPI for API endpoints, supports logging, testing with pytest, and can be run in a Docker container.
+An installable Python module application that serves a TensorHub model through an API to classify bird images. It uses FastAPI for API endpoints, supports logging, testing with pytest, and can be run in a Docker container.
 
 ## Features
 
