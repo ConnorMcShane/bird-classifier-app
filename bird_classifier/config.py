@@ -16,7 +16,8 @@ class Config:
 
 
     ### Model ###
-    model_url = "https://tfhub.dev/google/aiy/vision/classifier/birds_V1/1"
+    model_registry = "bird_classifier/model_registry.json"
+    model_name = "aiy/birds"
     model_version = "latest"
 
 

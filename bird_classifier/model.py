@@ -1,6 +1,7 @@
 """Model wrapper for TensorFlow Hub models."""
 import tensorflow_hub as hub
 import logging
+import json
 
 
 class ModelWrapper:
@@ -14,7 +15,28 @@ class ModelWrapper:
         """
 
         self.logger = logger
-        self.model = self.load_model(config.model_url)
+        self.config = config
+        self.model_url = self.get_model_url()
+        self.model = self.load_model(self.model_url)
+
+    
+    def get_model_url(self):
+        """Get the model URL
+
+        Returns:
+            str: Model URL
+        """
+
+        # read model registry json file
+        with open(self.config.model_registry, "r") as f:
+            model_registry = json.load(f)
+
+        # get model URL from model registry
+        models = model_registry["models"]
+        model_versions = models[self.config.model_name]["versions"]
+        model_url = model_versions[self.config.model_version]["url"]
+
+        return model_url
 
 
     def load_model(self, model_url):

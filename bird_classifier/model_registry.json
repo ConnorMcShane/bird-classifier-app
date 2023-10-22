@@ -1,0 +1,32 @@
+{
+    "models": {
+        "aiy/birds": {
+            "name": "aiy/vision/classifier/birds_V1",
+            "architecture": "MobileNet_V1",
+            "dataset": "iNaturalist Birds",
+            "versions": {
+                "latest": {
+                    "url": "https://tfhub.dev/google/aiy/vision/classifier/birds_V1/1",
+                    "performance": {
+                        "accuracy": 0.9,
+                        "latency": 0.1
+                    }
+                },
+                "1": {
+                    "url": "https://tfhub.dev/google/aiy/vision/classifier/birds_V1/1",
+                    "performance": {
+                        "accuracy": 0.9,
+                        "latency": 0.1
+                    }
+                },
+                "0": {
+                    "url": "https://tfhub.dev/google/aiy/vision/classifier/birds_V1/1",
+                    "performance": {
+                        "accuracy": 0.9,
+                        "latency": 0.1
+                    }
+                }
+            }
+        }
+    }
+}

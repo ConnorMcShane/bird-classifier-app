@@ -40,3 +40,24 @@ class Utils:
             return None
         
         return response.content
+    
+
+    @staticmethod
+    def convert_dict_to_strings(input_dict):
+        """Convert all values in a dictionary to strings
+        
+        Args:
+            input_dict (dict): Dictionary to convert
+            
+        Returns:
+            dict: Dictionary with all values converted to strings
+        """
+
+        if isinstance(input_dict, dict):
+            return {str(key): convert_dict_to_strings(value) for key, value in input_dict.items()}
+        elif isinstance(input_dict, list):
+            return [convert_dict_to_strings(item) for item in input_dict]
+        elif isinstance(input_dict, tuple):
+            return tuple(convert_dict_to_strings(item) for item in input_dict)
+        else:
+            return str(input_dict) 

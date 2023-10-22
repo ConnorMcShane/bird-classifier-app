@@ -1,9 +1,10 @@
-FROM nvidia/cuda:11.3.1-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:11.5.2-cudnn8-devel-ubuntu20.04
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install any needed packages specified in requirements.txt
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install software-properties-common -y
+RUN apt-get install -y --no-install-recommends software-properties-common 
 RUN add-apt-repository ppa:deadsnakes/ppa -y
 
 RUN apt-get install -y --no-install-recommends python3.9
