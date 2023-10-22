@@ -1,0 +1,57 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  default:
+    format: '%(levelname)s - %(asctime)s - %(message)s'
+  colored:
+    () : coloredlogs.ColoredFormatter
+    format: '%(levelname)s - %(asctime)s - %(message)s'
+handlers:
+  console:
+    formatter: colored
+    class: logging.StreamHandler
+    stream: ext://sys.stdout
+    level: INFO
+  classifier-file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: default
+    filename: logs/bird_classifier.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 20
+    encoding: utf8
+    delay: true
+    level: DEBUG
+  api-file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: default
+    filename: logs/fastapi.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 20
+    encoding: utf8
+    delay: true
+    level: DEBUG
+loggers:
+  uvicorn.error:
+    level: DEBUG
+    handlers:
+      - console
+      - api-file
+    propagate: no
+  uvicorn.access:
+    level: DEBUG
+    handlers:
+      - console
+      - api-file
+    propagate: no
+  app:
+    name: classifier
+    level: DEBUG
+    handlers:
+      - console
+      - classifier-file
+    propagate: no
+root:
+  level: DEBUG
+  handlers:
+    - console
+  propagate: no
