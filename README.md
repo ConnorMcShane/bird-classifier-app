@@ -133,6 +133,10 @@ pytest ./ --html=tests/test_outputs/report.html --self-contained-html
 
 This will execute the test suite and create a detailed HTML report in the tests/test_outputs directory.
 
+report will look like this:
+
+![pytest-html-report](tests/test_data/test_report.png)
+
 ## Docker
 You can also run the Bird Classifier App in a Docker container. A Dockerfile is provided for easy containerization.
 1. Build the Docker image:
