@@ -12,6 +12,7 @@ build/
 wandb/
 logs/
 temp/
+tests/test_outputs/
 develop-eggs/
 dist/
 downloads/
