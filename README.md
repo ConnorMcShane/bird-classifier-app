@@ -129,11 +129,19 @@ The app will be available at http://127.0.0.1:8000. You can use the API endpoint
 ## Logging
 The Bird Classifier App uses Python's logging module to log model performance. The log file is located in the logs directory.
 
+### Weight and Biases
 Weights and Biases is also used to log model performance. You can view the Weights and Biases dashboard [here](https://wandb.ai/connor-mcshane/bird_classifier/runs/bqk3gevy?workspace=user-connor-mcshane).
 
 Here is an example of wandb logging:
 ![wandb-logs](tests/test_data/wandb-logs.png)
 ![wandb-logs](tests/test_data/system-logs.png)
+
+### Weave Steam Table
+The Bird Classifier App also uses Weave Steam Table to log model outputs. 
+
+Here is an example of what the table looks like: 
+![stream-table](tests/test_data/weave-stream-table.png)
+
 
 ## Testing
 To run tests and generate an HTML report, use the following command:
