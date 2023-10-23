@@ -8,4 +8,4 @@ pytest==7.4.2
 pytest-html==4.0.2  
 PyYAML==6.0.1
 coloredlogs==15.0.1
-
+weave
