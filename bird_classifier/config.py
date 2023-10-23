@@ -5,7 +5,7 @@ class Config:
 
 
     ### Data ###
-    root_dir = "/mnt/c/Users/ConnorMcShane/Documents/personal/projects/bird_classifier/"
+    root_dir = "./"
     classes_url = "https://www.gstatic.com/aihub/tfhub/labelmaps/aiy_birds_V1_labelmap.csv"
 
     batch_size = 6

@@ -7,19 +7,16 @@ RUN apt-get upgrade -y
 # Copy the current directory contents into the container at /app
 RUN mkdir /app
 WORKDIR /app
-
-# copy app into container
 COPY . /app
-
-RUN apt-get install -y libgl1 
-RUN apt-get install -y libglib2.0-0 
-RUN rm -rf /var/lib/apt/lists/*
 
 # Install dependencies from requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install --upgrade requests
 RUN pip install .
+
+RUN apt-get install -y libgl1 
+RUN apt-get install -y libglib2.0-0
 
 # Make port 8000 available to the world outside this container
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

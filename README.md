@@ -38,6 +38,7 @@ An installable Python module application that serves a TensorHub model through a
 3. Install dependencies:
 
     ```bash
+    pip install tensorflow==2.13.0
     pip install -r requirements.txt
     pip install weave
     pip install .

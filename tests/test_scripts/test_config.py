@@ -5,7 +5,7 @@ class Config:
 
 
     ### Data ###
-    root_dir = "/mnt/c/Users/ConnorMcShane/Documents/personal/projects/bird_classifier/"
+    root_dir = "./"
     example_image_file = "tests/test_data/test_image.jpg"
     example_output_file = "tests/test_data/example_output.npy"
     classes_url = "https://www.gstatic.com/aihub/tfhub/labelmaps/aiy_birds_V1_labelmap.csv"
