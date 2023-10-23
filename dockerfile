@@ -8,11 +8,15 @@ RUN apt-get upgrade -y
 RUN mkdir /app
 WORKDIR /app
 
+# copy app into container
+COPY . /app
+
 RUN apt-get install -y libgl1 
 RUN apt-get install -y libglib2.0-0 
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install dependencies from requirements.txt
-COPY requirements.txt /app
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN pip install --upgrade requests
+RUN pip install .
