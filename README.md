@@ -46,7 +46,7 @@ An installable Python module application that serves a TensorHub model through a
 To start the Bird Classifier App, use the following command:
 
 ```bash
-uvicorn app:app --log-config=log_config.yaml
+uvicorn app:app --log-config=log_config.yaml --host 0.0.0.0 --port 8000
 ```
 
 The app will be available at http://127.0.0.1:8000. You can use the API endpoint /classify to classify birds in images.
@@ -158,15 +158,16 @@ report will look like this:
 
 ## Docker
 You can also run the Bird Classifier App in a Docker container. A Dockerfile is provided for easy containerization.
-1. Build the Docker image:
+1. Build and run the Docker image in a container with docker-compose:
     ```bash
-    docker build -t bird-classifier-app .
+    docker-compose up -d
     ```
-2. Run the Docker container:
+This will run the container in detached mode. 
+
+2. To stop the container, use the following command:
     ```bash
-    docker run --name birdclassifier -p 8000:8000 --gpus=all -v {pwd}/:/app/ bird_classifier
+    docker-compose down
     ```
-    make sure to replace {pwd} with the absolute path to the bird-classifier-app directory.
 
 note that the wandb loggin has not been tested inside the docker container so please disable it in the config if running inside docker.
 

@@ -20,3 +20,6 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install --upgrade requests
 RUN pip install .
+
+# Make port 8000 available to the world outside this container
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
