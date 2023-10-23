@@ -1,10 +1,6 @@
 """Logger class"""
 import logging
 import os
-import wandb
-import weave
-weave.use_frontend_devmode()
-from weave.monitoring import StreamTable
 
 
 LOGGING_LEVELS = {
@@ -127,6 +123,10 @@ class Logger:
         """Initialise wandb logging"""
 
         if self.config.wandb:
+            import wandb
+            import weave
+            weave.use_frontend_devmode()
+            from weave.monitoring import StreamTable
             self.wandb_run = wandb.init(
                 project=self.config.wandb_project,
                 name=self.config.wandb_run_name,

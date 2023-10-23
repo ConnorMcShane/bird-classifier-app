@@ -1,4 +1,4 @@
-FROM nogil/python-cuda
+FROM tensorflow/tensorflow:2.13.0-gpu
 
 # Install any needed packages specified in requirements.txt
 RUN apt-get update -y
@@ -8,8 +8,6 @@ RUN apt-get upgrade -y
 RUN mkdir /app
 WORKDIR /app
 
-RUN apt-get update -y
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 RUN apt-get install -y libgl1 
 RUN apt-get install -y libglib2.0-0 
 RUN rm -rf /var/lib/apt/lists/*
