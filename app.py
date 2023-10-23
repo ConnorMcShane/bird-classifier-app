@@ -45,9 +45,9 @@ async def classify_birds(data: InputData):
 
     return {"data": output_dict}
 
-logger.info("Bird classifier app swagger docs: http://127.0.0.1:8000/docs")
+logger.info("Bird classifier app swagger docs: http://0.0.0.0:8000/docs")
 
 if __name__ == "__main__":
 
     # run app
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
