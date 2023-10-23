@@ -39,6 +39,7 @@ An installable Python module application that serves a TensorHub model through a
 
     ```bash
     pip install -r requirements.txt
+    pip install weave
     pip install .
     ```
 ## Usage
@@ -166,6 +167,8 @@ You can also run the Bird Classifier App in a Docker container. A Dockerfile is 
     docker run --name birdclassifier -p 8000:8000 --gpus=all -v {pwd}/:/app/ bird_classifier
     ```
     make sure to replace {pwd} with the absolute path to the bird-classifier-app directory.
+
+note that the wandb loggin has not been tested inside the docker container so please disable it in the config if running inside docker.
 
 ## Contributing
 Contributions are welcome!
