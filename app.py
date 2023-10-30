@@ -1,10 +1,7 @@
-import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 import logging
 import os
-
-# set tensorflow logging level
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 from bird_classifier import BirdClassifier
@@ -18,6 +15,7 @@ app = FastAPI()
 
 # initialise classifier
 classifier = BirdClassifier(logger)
+
 class InputData(BaseModel):
     data: dict
 

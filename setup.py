@@ -3,6 +3,7 @@ import io
 import os
 from setuptools import find_packages, setup
 
+__version__ = '0.0.0'
 
 def read(*paths, **kwargs):
     """Read the contents of a text file safely.
@@ -43,12 +44,19 @@ def read_requirements(path):
 
 # Run setup
 setup(
-    name="bridclassifier",
-    version="0.0.0",
-    description="Bird classifier",
+    name="bird_classifier",
+    version=__version__,
+    author="Connor McShane",
+    description="This is app serves a model from tensorflow hub through an API. It is a basic inference app complete with logging, monitoring and testing.",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    author="Connor McShane",
+    url="https://github.com/ConnorMcShane/bird-classifier-app",
     packages=find_packages(exclude=["tests"]),
-    install_requires=read_requirements("requirements.txt")
+    install_requires=read_requirements("requirements.txt"),
+    classifiers=(
+        "Programming Language :: Python",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        'Natural Language :: English',
+    ),
 )
